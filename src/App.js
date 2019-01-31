@@ -32,7 +32,7 @@ export default class App extends React.Component {
   add=(taskName)=>
   {
       //axios.post('http://localhost:3008/add/task'
-       axios.post(`https://cors-anywhere.herokuapp.com/http://backendforreact-backendforreact.1d35.starter-us-east-1.openshiftapps.com/add/task`)
+       axios.post(`https://cors-anywhere.herokuapp.com/http://backendforreact-backendforreact.1d35.starter-us-east-1.openshiftapps.com/add/task`
      ,{
         taskName:taskName,
         isdone:false
