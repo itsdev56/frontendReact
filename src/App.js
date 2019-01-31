@@ -16,18 +16,24 @@ export default class App extends React.Component {
   } 
   componentDidMount()
   {
-      axios.get('http://localhost:3008/').then(res=>{
+      //axios.get('http://localhost:3008/')
+     axios.get(`https://cors-anywhere.herokuapp.com/http://backendforreact-backendforreact.1d35.starter-us-east-1.openshiftapps.com`) 
+    .then(res=>{
         this.setState({todo:res.data, query: res.data})})
   }
   del=(id)=>
   {
-      axios.delete(`http://localhost:3008/delete/task/${id}`).then(res=>{this.setState({todo:[...this.state.todo.filter(x=> x.id !==id)]})
+      //axios.delete(`http://localhost:3008/delete/task/${id}`)
+      axios.delete(`https://cors-anywhere.herokuapp.com/http://backendforreact-backendforreact.1d35.starter-us-east-1.openshiftapps.com/delete/task/${id}`)
+      .then(res=>{this.setState({todo:[...this.state.todo.filter(x=> x.id !==id)]})
       this.search('')
   })
   }
   add=(taskName)=>
   {
-      axios.post('http://localhost:3008/add/task',{
+      //axios.post('http://localhost:3008/add/task'
+       axios.post(`https://cors-anywhere.herokuapp.com/http://backendforreact-backendforreact.1d35.starter-us-east-1.openshiftapps.com/add/task`)
+     ,{
         taskName:taskName,
         isdone:false
       }).then(res=>{
@@ -51,7 +57,9 @@ export default class App extends React.Component {
   }
   markComplete=(id )=>
     {
-      axios.put(`http://localhost:3008/update/${id}`).then(res=>this.setState(
+      //axios.put(`http://localhost:3008/update/${id}`)
+      axios.put(`https://cors-anywhere.herokuapp.com/http://backendforreact-backendforreact.1d35.starter-us-east-1.openshiftapps.com/update/${id}`)
+        .then(res=>this.setState(
         {
             todo:this.state.todo.map(value=>
               {
