@@ -4,18 +4,6 @@ export default class Add extends Component {
   {
     taskName:''
   }
-  /*meri=()=>
-  {
-    width: '400px',
-    padding: '10px 10px',
-    margin:'0 auto',  
-    marginTop: '20px', 
-    marginBottom: '20px',
-    borderRadius: '2px',
-    textAlign:'center',
-    border: '2px solid black', 
-    color: 'green',
-  }*/
   onChange=(e)=> this.setState({taskName:e.target.value});
   onSubmit=(e)=>{
     e.preventDefault();
